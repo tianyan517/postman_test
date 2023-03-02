@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "484f452f-ae39-45d8-a8b2-146a8193f30f",
+		"name": "测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "测试",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"总数是否正确\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.data.total).to.eql(628);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "sign",
+						"value": "{{sign}}",
+						"type": "text"
+					},
+					{
+						"key": "timestamp",
+						"value": "1677758832971",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiJ9.eyJpbnN0YW5jZUlkIjoxMzA3OTUwNTU5MTEzMTYxODc3LCJsb2dpbk5hbWUiOiIyMTAwMDMwMCIsImRvbWFpbiI6IklETSIsInRlbmFudElkIjoxLCJpZCI6MjIwODI0MDY4MDIzLCJhY2NvdW50TnVtYmVyIjoiMjEwMDAzMDAiLCJsb2dpblNvdXJjZSI6IjYiLCJ1YyI6IjEiLCJqdGkiOiJkMjUzODNhMy1mODAzLTQyYjItYWEwMi02MGJkYjk1N2JhMzUiLCJuYmYiOjE2Nzc3NTg3MzcsImV4cCI6MTY3Nzg1OTIwMH0.gXaJfZhz5Bn8j8QDWhdQqLhaqSDNmHujHhMIDEv_B31xuAp972BMaclKZ7KDFR2fgtU5I223kgfugSF1TJqiiK2FD-prpuLxdGVs3JAa7jcdJ-jHhhHlVfo6rhkqcrMaC8EJU_jU6HYBrfgi0uEsJS_xvhyB8i-bfplxZERqFKLTrPpjkBJ3DK71L3qSck-5ufFoTy3NV5EZuDCbLSwBDIyt068wzJCLWkJE-nGQoekpiZ-j6ocptMa0UNi_zfIABWkDQX05vgfqG_svcFFs8i0S7y9BxZ3zX9KmXyFq8FT32oPqlPrwQ5zQThHtbd5VQwCWbZYljgAmBhHL5DsA5g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://aitest.haiersmarthomes.com:11001/bomp-core-service/aiAppIdentify/getAiAppIdentifyList?pageNum=1&pageSize=20",
+					"protocol": "https",
+					"host": [
+						"aitest",
+						"haiersmarthomes",
+						"com"
+					],
+					"port": "11001",
+					"path": [
+						"bomp-core-service",
+						"aiAppIdentify",
+						"getAiAppIdentifyList"
+					],
+					"query": [
+						{
+							"key": "pageNum",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
